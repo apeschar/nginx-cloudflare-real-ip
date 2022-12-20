@@ -1,0 +1,6 @@
+[messages]
+disable=
+    invalid-name,
+    missing-module-docstring,
+    missing-function-docstring,
+    consider-using-f-string,
