@@ -16,7 +16,8 @@ IP_LIST_URLS = (
 )
 
 
-def main(args):
+def main():
+    args = parser.parse_args()
     ips = get_ips()
     config = generate_config(ips)
 
@@ -71,7 +72,3 @@ def atomic_write(dest, contents):
         tmp.rename(dest)
     finally:
         tmp.unlink(missing_ok=True)
-
-
-if __name__ == "__main__":
-    sys.exit(main(parser.parse_args()))
