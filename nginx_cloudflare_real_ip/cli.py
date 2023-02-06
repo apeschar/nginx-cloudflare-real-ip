@@ -71,4 +71,7 @@ def atomic_write(dest, contents):
         tmp.write_text(contents, encoding="utf-8")
         tmp.rename(dest)
     finally:
-        tmp.unlink(missing_ok=True)
+        try:
+            tmp.unlink()
+        except FileNotFoundError:
+            pass
